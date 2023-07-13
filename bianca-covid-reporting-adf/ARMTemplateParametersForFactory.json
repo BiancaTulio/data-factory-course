@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "bianca-covid-reporting-adf"
+		},
+		"ls_ablob_biancacovidreportingsa_connectionString": {
+			"value": ""
+		},
+		"ls_adls_biancacovidreportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_adls_biancacovidreportingdl_properties_typeProperties_url": {
+			"value": "https://biancacovidreportingdl.dfs.core.windows.net/"
+		}
+	}
+}
