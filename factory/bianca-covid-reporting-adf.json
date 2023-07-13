@@ -1,0 +1,9 @@
+{
+	"name": "bianca-covid-reporting-adf",
+	"location": "swedencentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "04d2310e-1893-468d-ac7b-8367ed200888",
+		"tenantId": "20e9e658-d844-4d9c-a0b7-36389d71736f"
+	}
+}
