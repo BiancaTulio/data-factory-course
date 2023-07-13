@@ -17,6 +17,9 @@
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/bea74347-0a51-443b-881e-e66c3bbcda8f/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/biancacovidreportingsa"
 		},
+		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+			"value": "https://github.com"
+		},
 		"containerUri": {
 			"value": ""
 		},
