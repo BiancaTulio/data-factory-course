@@ -790,11 +790,7 @@
 								"referenceName": "ds_processed_cases_deaths",
 								"type": "DatasetReference"
 							},
-							"name": "CasesAndDeathsSink",
-							"rejectedDataLinkedService": {
-								"referenceName": "ls_adls_biancacovidreportingdl",
-								"type": "LinkedServiceReference"
-							}
+							"name": "CasesAndDeathsSink"
 						}
 					],
 					"transformations": [
@@ -892,8 +888,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_cases_deaths')]",
 				"[concat(variables('factoryId'), '/datasets/ds_country_lookup')]",
-				"[concat(variables('factoryId'), '/datasets/ds_processed_cases_deaths')]",
-				"[concat(variables('factoryId'), '/linkedServices/ls_adls_biancacovidreportingdl')]"
+				"[concat(variables('factoryId'), '/datasets/ds_processed_cases_deaths')]"
 			]
 		},
 		{
