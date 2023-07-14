@@ -25,11 +25,7 @@
 						"referenceName": "ds_processed_cases_deaths",
 						"type": "DatasetReference"
 					},
-					"name": "CasesAndDeathsSink",
-					"rejectedDataLinkedService": {
-						"referenceName": "ls_adls_biancacovidreportingdl",
-						"type": "LinkedServiceReference"
-					}
+					"name": "CasesAndDeathsSink"
 				}
 			],
 			"transformations": [
