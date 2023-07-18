@@ -20,6 +20,9 @@
 		"ls_adls_biancacovidreportingdl_properties_typeProperties_url": {
 			"value": "https://biancacovidreportingdl.dfs.core.windows.net/"
 		},
+		"ls_db_covid_cluster_properties_typeProperties_existingClusterId": {
+			"value": "0718-121123-oj1o90kt"
+		},
 		"ls_hdi_covid_cluster_properties_typeProperties_userName": {
 			"value": "admin"
 		},
