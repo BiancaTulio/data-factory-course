@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_adls_biancacovidreportingdl'"
 		},
+		"ls_db_covid_cluster_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_db_covid_cluster'"
+		},
 		"ls_hdi_covid_cluster_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_hdi_covid_cluster'"
@@ -23,6 +27,10 @@
 			"type": "string",
 			"defaultValue": "https://biancacovidreportingdl.dfs.core.windows.net/"
 		},
+		"ls_hdi_covid_cluster_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
 		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseURL}"
@@ -30,10 +38,6 @@
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/bea74347-0a51-443b-881e-e66c3bbcda8f/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/biancacovidreportingsa"
-		},
-		"ls_hdi_covid_cluster_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "admin"
 		},
 		"containerUri": {
 			"type": "string",
@@ -67,6 +71,9 @@
 					},
 					"ls_adls_biancacovidreportingdl_accountKey": {
 						"value": "[parameters('ls_adls_biancacovidreportingdl_accountKey')]"
+					},
+					"ls_db_covid_cluster_accessToken": {
+						"value": "[parameters('ls_db_covid_cluster_accessToken')]"
 					},
 					"ls_hdi_covid_cluster_password": {
 						"value": "[parameters('ls_hdi_covid_cluster_password')]"
