@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'ls_adls_biancacovidreportingdl'"
 		},
+		"ls_hdi_covid_cluster_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_hdi_covid_cluster'"
+		},
 		"ls_adls_biancacovidreportingdl_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://biancacovidreportingdl.dfs.core.windows.net/"
@@ -22,6 +26,10 @@
 		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseURL}"
+		},
+		"ls_hdi_covid_cluster_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
 		}
 	},
 	"variables": {
@@ -586,6 +594,31 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_adls_biancacovidreportingdl')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_hdi_covid_cluster')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HDInsight",
+				"typeProperties": {
+					"clusterUri": "https://bianca-covid-reporting-hdi.azurehdinsight.net",
+					"userName": "[parameters('ls_hdi_covid_cluster_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('ls_hdi_covid_cluster_password')]"
+					},
+					"isEspEnabled": false,
+					"linkedServiceName": {
+						"referenceName": "ls_ablob_biancacovidreportingsa",
+						"type": "LinkedServiceReference"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_ablob_biancacovidreportingsa')]"
 			]
 		},
 		{
@@ -1323,54 +1356,6 @@
 				"[concat(variables('factoryId'), '/datasets/ds_dim_date')]",
 				"[concat(variables('factoryId'), '/datasets/ds_processed_hospital_admissions_weekly')]",
 				"[concat(variables('factoryId'), '/datasets/ds_processed_hospital_admissions_daily')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pl_process_cases_deaths_data')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "df_transform_cases_deaths",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "df_transform_cases_deaths",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"CasesAndDeathsSource": {},
-									"CountryLookup": {},
-									"CasesAndDeathsSink": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/df_transform_cases_deaths')]"
 			]
 		}
 	]

@@ -11,6 +11,9 @@
 		"ls_adls_biancacovidreportingdl_accountKey": {
 			"value": ""
 		},
+		"ls_hdi_covid_cluster_password": {
+			"value": ""
+		},
 		"ls_adls_biancacovidreportingdl_properties_typeProperties_url": {
 			"value": "https://biancacovidreportingdl.dfs.core.windows.net/"
 		},
@@ -19,6 +22,9 @@
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/bea74347-0a51-443b-881e-e66c3bbcda8f/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/biancacovidreportingsa"
+		},
+		"ls_hdi_covid_cluster_properties_typeProperties_userName": {
+			"value": "admin"
 		}
 	}
 }
