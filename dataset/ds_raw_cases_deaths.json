@@ -1,9 +1,12 @@
 {
-	"name": "ds_cases_deaths",
+	"name": "ds_raw_cases_deaths",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_biancacovidreportingdl",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Raw"
 		},
 		"annotations": [],
 		"type": "DelimitedText",

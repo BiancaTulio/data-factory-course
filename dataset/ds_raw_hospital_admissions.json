@@ -1,9 +1,12 @@
 {
-	"name": "ds_hospital_admissions",
+	"name": "ds_raw_hospital_admissions",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_biancacovidreportingdl",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Raw"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
