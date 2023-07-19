@@ -43,7 +43,7 @@
 			"type": "string",
 			"defaultValue": "@{linkedService().sourceBaseURL}"
 		},
-		"tr_ingest_population_data_properties_typeProperties_scope": {
+		"tr_population_data_arrives_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/bea74347-0a51-443b-881e-e66c3bbcda8f/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/biancacovidreportingsa"
 		},
@@ -86,9 +86,6 @@
 					"ls_sql_covid_db_connectionString": {
 						"value": "[parameters('ls_sql_covid_db_connectionString')]"
 					},
-					"ls_hdi_covid_cluster_password": {
-						"value": "[parameters('ls_hdi_covid_cluster_password')]"
-					},
 					"ls_adls_biancacovidreportingdl_properties_typeProperties_url": {
 						"value": "[parameters('ls_adls_biancacovidreportingdl_properties_typeProperties_url')]"
 					},
@@ -97,9 +94,6 @@
 					},
 					"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 						"value": "[parameters('ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url')]"
-					},
-					"ls_hdi_covid_cluster_properties_typeProperties_userName": {
-						"value": "[parameters('ls_hdi_covid_cluster_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -119,8 +113,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"tr_ingest_population_data_properties_typeProperties_scope": {
-						"value": "[parameters('tr_ingest_population_data_properties_typeProperties_scope')]"
+					"ls_hdi_covid_cluster_password": {
+						"value": "[parameters('ls_hdi_covid_cluster_password')]"
+					},
+					"ls_hdi_covid_cluster_properties_typeProperties_userName": {
+						"value": "[parameters('ls_hdi_covid_cluster_properties_typeProperties_userName')]"
+					},
+					"tr_population_data_arrives_properties_typeProperties_scope": {
+						"value": "[parameters('tr_population_data_arrives_properties_typeProperties_scope')]"
 					}
 				}
 			},
