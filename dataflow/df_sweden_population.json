@@ -19,6 +19,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "swedenpopulation"
+				},
+				{
+					"dataset": {
+						"referenceName": "worldwidepopulation",
+						"type": "DatasetReference"
+					},
+					"name": "worldwidepopulation"
 				}
 			],
 			"transformations": [
@@ -55,12 +62,24 @@
 				"          age_group_65_79 as string,",
 				"          age_group_80_max as string",
 				"     ),",
+				"     partitionFileNames:['swedenpopulation.csv'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> swedenpopulation"
+				"     partitionBy('hash', 1)) ~> swedenpopulation",
+				"Sweden@Worldwide sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     partitionBy('hash', 1)) ~> worldwidepopulation"
 			]
 		}
 	}
